@@ -1,0 +1,31 @@
+body, html {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-image: url('images/landscape.jpg');
+  background-size: cover;
+}
+
+main {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  color: #000000;
+  padding-left : 50px;
+}
+
+canvas {
+  border: 1px solid;
+  background-color: #ffffff;
+}
+
+button {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid gray;
+}
