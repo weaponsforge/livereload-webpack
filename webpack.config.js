@@ -24,12 +24,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        test: /\.(png|svg|jpg|gif)$/i,
+        type: 'asset'
      }
     ]
   },
@@ -37,9 +37,11 @@ module.exports = {
   // Development server set-up - define static assets directory and paths
   devServer: {
     open: true,
-    publicPath: '',
-    contentBase: path.resolve(__dirname, 'src'),
-    watchContentBase: true,
-    compress: true
+    hot: false, // disable hot reload for plain HTML/CSS/JS development
+    compress: true,
+    static: {
+      directory: path.join(__dirname, 'src'),
+      publicPath: '/'
+    }
   }
 }
