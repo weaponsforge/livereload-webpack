@@ -11,10 +11,12 @@
 - [Usage](#usage)
 - [Available Scripts](#available-scripts)
 - [Usage with Docker](#usage-with-docker)
+   - [Using the Pre-Built Docker Image](#using-the-pre-built-docker-image)
    - [Local-Built Development Image](#local-built-development-image)
 - [Building Docker Images](#building-docker-images)
 - [Other Notes](#other-notes)
    - [Debugging Webpack Apps in VSCode](#debugging-webpack-apps-in-vscode)
+- [Deployment with GitHub Actions](#deployment-with-gitHub-actions)
 - [References](#references)
 
 
@@ -83,6 +85,43 @@ Builds the static website output using webpack into the **"/dist"** directory.
 
 ## Usage with Docker
 
+### Using the Pre-Built Docker Image
+
+This project deploys the latest **development** Docker image to Docker Hub on the creation of new Release/Tags. It is available at:
+
+https://hub.docker.com/r/weaponsforge/livereload-webpack
+
+1. Pull the pre-built development Docker images using any of the two (2) options:
+   - Open a terminal and run:<br>
+	    `docker pull weaponsforge/livereload-webpack:latest`
+   - Navigate to the gsites-components root project directory, then run:<br>
+	    `docker compose -f docker-compose.dev.yml pull`
+
+2. Run the development image.<br>
+   - Using only Docker (1st option):
+
+      > **INFO:** This option requires having the webpack web app files inside a `"/src"` directory.
+
+      ```
+      # On Linux OS
+      docker run -it --rm -p 8080:8080 -v $(pwd)/src:/opt/app/src weaponsforge/livereload-webpack:latest
+
+      # On Windows OS
+      docker run -it --rm -p 8080:8080 -v %cd%\src:/opt/app/src -e WATCHPACK_POLLING=true weaponsforge/livereload-webpack:latest
+      ```
+
+   - Using Docker compose (2nd option):<br>
+      - `docker compose -f docker-compose.dev.yml up`
+      - > **INFO:** Uncomment the following lines in the `docker-compose.dev.yml` file when working in a Windows host.
+         ```
+         # Enable WATCHPACK_POLLING if working in Windows WSL2 to enable hot reload
+         environment:
+           - WATCHPACK_POLLING=true
+         ```
+
+
+3. Refer to the [Usage](#usage) section **steps # 2 - # 4** for local development.
+
 ### Local-Built Development Image
 
 1. Build the Docker image for local development.<br>
@@ -93,7 +132,7 @@ Builds the static website output using webpack into the **"/dist"** directory.
 2. Run the development image.<br>
 `docker compose -f docker-compose.dev.yml up`
 
-3. Refer to the [Usage](#usage) section **steps # 2 - # 4** for development.
+3. Refer to the [Usage](#usage) section **steps # 2 - # 4** for local development.
 
 4. Stop and exit the development container.<br>
 `docker compose -f docker-compose.dev.yml down`
@@ -111,6 +150,28 @@ The **development** Docker image contains Node runtime, Webpack dependencies, 
 The **production** Docker image contains the Webpack app's static build output running in an nginx container for minimal production website build. Build it with:
 
 `docker compose -f docker-compose.prod.yml build`
+
+## Deployment with GitHub Actions
+
+This repository deploys the local development Docker image to Docker Hub on creation of new Release/Tags. It is available at:
+
+https://hub.docker.com/r/weaponsforge/livereload-webpack
+
+Add the following GitHub Secrets and Variables to enable deployment to Docker Hub.
+
+#### GitHub Secrets
+
+| GitHub Secret | Description |
+| --- | --- |
+| DOCKERHUB_USERNAME | (Optional) Docker Hub username. Required to enable pushing the development image to Docker Hub. |
+| DOCKERHUB_TOKEN | (Optional) Deploy token for the Docker Hub account. Required to enable pushing the development image to Docker Hub. |
+
+#### GitHub Variables
+
+| GitHub Variable | Description |
+| --- | --- |
+| DOCKERHUB_USERNAME | (Optional) Docker Hub username. Required to enable pushing the development image to Docker Hub. |
+
 
 ## Other Notes
 
