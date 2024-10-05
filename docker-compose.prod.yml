@@ -1,0 +1,13 @@
+services:
+  weaponsforge.livereload-webpack.prod:
+    container_name: weaponsforge-localhost-webpack-prod
+    image: weaponsforge/livereload-webpack:prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    volumes:
+      - .:/opt/app
+      - /opt/app/node_modules
+    ports:
+      - "3000:3000"
