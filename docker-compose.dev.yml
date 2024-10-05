@@ -1,0 +1,17 @@
+services:
+  weaponsforge.livereload-webpack:
+    container_name: weaponsforge-localhost-webpack
+    image: weaponsforge/livereload-webpack:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - .:/opt/app
+      - /opt/app/node_modules
+    ports:
+      - "8080:8080"
+      - "9229:9229"
+    # Enable WATCHPACK_POLLING if working in Windows WSL2 to enable hot reload
+    # environment:
+    #  - WATCHPACK_POLLING=true
