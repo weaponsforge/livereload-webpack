@@ -11,6 +11,7 @@
 - [Usage](#usage)
 - [Available Scripts](#available-scripts)
 - [Usage with Docker](#usage-with-docker)
+   - [Local-Built Development Image](#local-built-development-image)
 - [Building Docker Images](#building-docker-images)
 - [Other Notes](#other-notes)
    - [Debugging Webpack Apps in VSCode](#debugging-webpack-apps-in-vscode)
@@ -82,7 +83,7 @@ Builds the static website output using webpack into the **"/dist"** directory.
 
 ## Usage with Docker
 
-### Building the Development Image
+### Local-Built Development Image
 
 1. Build the Docker image for local development.<br>
    - `docker compose -f docker-compose.dev.yml build`
@@ -122,7 +123,7 @@ The **production** Docker image contains the Webpack app's static build output
 
 1. Add breakpoints in the JavaScript (`*.js`) files inside webpack's app directory entry point at the `"src/"` directory.
 
-2. Copy the following VSCode launch configurations (`launch.json`):
+2. Copy the following VSCode launch configurations to the `/.vscode/launch.json` file's `configurations[]` array:
 
    **Debug with MS Edge**
 
