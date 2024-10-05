@@ -1,4 +1,4 @@
-FROM node:20.15.0-alpine as base
+FROM node:20.15.0-alpine AS base
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
 RUN adduser -S user
@@ -13,14 +13,14 @@ EXPOSE 8080
 CMD ["npm", "run", "dev"]
 
 # BUILD TARGET
-FROM base as build
+FROM base AS build
 RUN npm install && npm cache clean --force
 COPY . ./
 RUN npm run build
 USER user
 
 # PRODUCTION CLIENT PROFILE
-FROM nginx:1.22.0-alpine as production
+FROM nginx:1.22.0-alpine AS production
 COPY --from=build /opt/app/dist /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY config/nginx.conf /etc/nginx/conf.d
