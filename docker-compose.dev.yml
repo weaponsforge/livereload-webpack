@@ -13,5 +13,5 @@ services:
       - "8080:8080"
       - "9229:9229"
     # Enable WATCHPACK_POLLING if working in Windows WSL2 to enable hot reload
-    # environment:
-    #  - WATCHPACK_POLLING=true
+    environment:
+      - WATCHPACK_POLLING=true

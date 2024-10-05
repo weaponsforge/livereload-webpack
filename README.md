@@ -129,7 +129,7 @@ https://hub.docker.com/r/weaponsforge/livereload-webpack
 1. Build the Docker image for local development.<br>
    - `docker compose -f docker-compose.dev.yml build`
 	    > **INFO:** Do this step only once or after installing new packages in the package.json file.
-	 - Refer to the [Development Image](#development-image) section for more information.
+   - Refer to the [Development Image](#development-image) section for more information.
 
 2. Run the development image.<br>
 `docker compose -f docker-compose.dev.yml up`
@@ -155,11 +155,9 @@ The **production** Docker image contains the Webpack app's static build output
 
 ## Deployment with GitHub Actions
 
-This repository deploys the local development Docker image to Docker Hub on creation of new Release/Tags. It is available at:
+This repository deploys the local development Docker image to Docker Hub on the creation of new Release/Tags. It also deploys the sample static website built with Webpack to GitHub Pages at https://weaponsforge.github.io/livereload-webpack.
 
-https://hub.docker.com/r/weaponsforge/livereload-webpack
-
-Add the following GitHub Secrets and Variables to enable deployment to Docker Hub.
+Add the following GitHub Secrets and Variables to enable deployment to Docker Hub and GitHub Pages.
 
 #### GitHub Secrets
 
