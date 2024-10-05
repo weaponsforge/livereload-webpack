@@ -5,6 +5,49 @@ on:
     types: [published]
 
 jobs:
+  build-client:
+    name: Build and Export Client
+    if: github.event.release.target_commitish == 'master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - name: Use NodeJS v20.15.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.15.0
+      - name: Install Dependencies and lint
+        run: npm install
+      - name: Build Files
+        run: npm run build
+      - name: Archive Development Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: main-out
+          path: dist
+          retention-days: 3
+
+  deploy-client:
+    name: Deploy Client to Github Pages
+    if: github.event.release.target_commitish == 'master'
+    needs: build-client
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: main-out
+      - name: List files for publish
+        run: ls -l -a
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
+
   docker-build-push-tag:
     name: Push Tagged Image
     if: github.event.release.target_commitish == 'master' && vars.DOCKERHUB_USERNAME != ''
