@@ -38,10 +38,10 @@ The following dependecies are used for this project. Feel free to experiment usi
 
 ## Installation
 
-1. Clone this repository.
+1. Clone this repository.<br>
 `https://github.com/weaponsforge/livereload-webpack.git`
 
-2. Install dependencies.
+2. Install dependencies.<br>
 `npm install`
 
 ## Usage
@@ -100,7 +100,9 @@ https://hub.docker.com/r/weaponsforge/livereload-webpack
 2. Run the development image.<br>
    - Using only Docker (1st option):
 
-      > **INFO:** This option requires having the webpack web app files inside a `"/src"` directory.
+      > **INFO:** This option requires having the webpack web development app files inside a `"/src"` directory, consisting of at most:
+      > 1. index.html
+      > 2. index.js
 
       ```
       # On Linux OS
