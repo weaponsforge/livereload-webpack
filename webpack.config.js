@@ -34,6 +34,9 @@ module.exports = {
     ]
   },
 
+  // Enable debugging from VSCode
+  devtool: 'source-map',
+
   // Development server set-up - define static assets directory and paths
   devServer: {
     open: true,
