@@ -1,8 +1,9 @@
+node_modules/
+dist/
+.vscode
 .git
 .gitignore
 .dockerignore
-node_modules/
-dist/
 Dockerfile
 *.zip
 *.rar

@@ -67,6 +67,6 @@ The following dependecies are used for this project. Feel free to experiment usi
 [[2]](https://trello.com/c/n25MYtq8) - webpack notes (trello)
 
 
-@weaponsforge
+@weaponsforge<br>
 20200702<br>
-20240=1005
+20241005
