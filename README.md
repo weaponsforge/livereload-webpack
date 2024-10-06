@@ -1,8 +1,11 @@
 ## livereload-webpack
 
-> Localhost static website development environment for plain html, css and javascript files with live reload.
-> Uses **webpack** + **webpack-dev-server**.
+Localhost static website development environment for plain html, css and javascript files with live reload.
+Uses **webpack** + **webpack-dev-server**.
 
+
+> [!NOTE]
+> A simpler alternative that also serves plain HTML, CSS, and JavaScript files with live-reload for local development is available at https://github.com/weaponsforge/livereload-basic
 
 ### Content
 
@@ -91,18 +94,26 @@ This project deploys the latest **development** Docker image to Docker Hub on th
 
 https://hub.docker.com/r/weaponsforge/livereload-webpack
 
-1. Pull the pre-built development Docker images using any of the two (2) options:
+1. Pull the pre-built development Docker image using any of the two (2) options:
    - Open a terminal and run:<br>
 	    `docker pull weaponsforge/livereload-webpack:latest`
-   - Navigate to the gsites-components root project directory, then run:<br>
+   - Navigate to the livereload-webpack root project directory, then run:<br>
 	    `docker compose -f docker-compose.dev.yml pull`
 
 2. Run the development image.<br>
    - Using only Docker (1st option):
 
-      > **INFO:** This option requires having the webpack web development app files inside a `"/src"` directory, consisting of at most:
-      > 1. index.html
-      > 2. index.js
+      > **INFO:** This option requires having the webpack web development app files inside a `"/src"` directory, consisting of at least:
+
+      ```
+      ├─ my-website-project
+      │   ├─ src
+      │   ├─── index.html
+      │   ├─── index.js
+      │   ├─── ...
+      ```
+
+      Navigate to the website project directory (for example, `"my-website-project"`) using a terminal, then run:
 
       ```
       # On Linux OS
@@ -220,7 +231,7 @@ Add the following GitHub Secrets and Variables to enable deployment to Docker Hu
    - Select `"Debug in Edge"` to launch an Edge web browser.
    - Select `"Debug in Chrome"` to launch a Chrome web browser.
 
-5. Run the app from the launched browser instance on **step # 4**.
+5. Run and use the app from the launched browser instance on **step # 4**.
 
 </details>
 
