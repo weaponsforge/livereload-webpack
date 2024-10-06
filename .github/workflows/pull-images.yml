@@ -4,12 +4,12 @@ name: Pull Docker Images
 on:
   schedule:
     # Runs "At 00:00 on day-of-month 1 in every 2nd month."
-    # - cron: '0 0 1 */2 *'
-    - cron: '0 */2 * * *' # Runs every 2 hours
+    - cron: '0 0 1 */2 *'
+    # - cron: '0 */2 * * *' # Runs every 2 hours
 
 jobs:
   pull-images:
-    name: Pull Development Image
+    name: Pull Development Images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
