@@ -107,10 +107,10 @@ https://hub.docker.com/r/weaponsforge/livereload-webpack
 
       ```
       ├─ my-website-project
-      |   ├─ src
-      |   ├─── index.html
-      |   ├─── index.js
-      |   ├─── ...
+      │   ├─ src
+      │   ├─── index.html
+      │   ├─── index.js
+      │   ├─── ...
       ```
 
       Navigate to the website project directory (for example, `"my-website-project"`) using a terminal, then run:
