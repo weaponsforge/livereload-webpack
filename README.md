@@ -106,11 +106,11 @@ https://hub.docker.com/r/weaponsforge/livereload-webpack
       > **INFO:** This option requires having the webpack web development app files inside a `"/src"` directory, consisting of at least:
 
       ```
-      |─ my-website-project
-      |   |─ src
-      |   |─── index.html
-      |   |─── index.js
-      |   |─── ...
+      ├─ my-website-project
+      |   ├─ src
+      |   ├─── index.html
+      |   ├─── index.js
+      |   ├─── ...
       ```
 
       Navigate to the website project directory (for example, `"my-website-project"`) using a terminal, then run:
