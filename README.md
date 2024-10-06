@@ -5,8 +5,7 @@ Uses **webpack** + **webpack-dev-server**.
 
 
 > [!NOTE]
-> A simpler alternative that also serves plain HTML, CSS, and JavaScript files with live-reload for local development is available at<br>
-> https://github.com/weaponsforge/livereload-basic
+> A simpler alternative that also serves plain HTML, CSS, and JavaScript files with live-reload for local development is available at https://github.com/weaponsforge/livereload-basic
 
 ### Content
 
@@ -106,13 +105,13 @@ https://hub.docker.com/r/weaponsforge/livereload-webpack
 
       > **INFO:** This option requires having the webpack web development app files inside a `"/src"` directory, consisting of at least:
 
-		```
-		├─ my-website-project
-		│   ├─ src
-		│   ├─── index.html
+      ```
+      |─ my-website-project
+      |   |─ src
+      |   |─── index.html
       |   |─── index.js
-		│   ├─── ...
-		```
+      |   |─── ...
+      ```
 
       Navigate to the website project directory (for example, `"my-website-project"`) using a terminal, then run:
 
