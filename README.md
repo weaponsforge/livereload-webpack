@@ -7,6 +7,10 @@ Uses **webpack** + **webpack-dev-server**.
 > [!NOTE]
 > A simpler alternative that also serves plain HTML, CSS, and JavaScript files with live-reload for local development is available at https://github.com/weaponsforge/livereload-basic
 
+> [!TIP]
+> Are you using **VSCode** and **want to do live reload** but **do not want to install livereload-webpacks's Node dependencies** or **run it using Docker**?
+> [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) might be the tool for you. Check it out from from the Visual Studio Marketplace.
+
 ### Content
 
 - [Dependencies](#dependencies)
