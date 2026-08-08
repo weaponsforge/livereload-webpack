@@ -1,4 +1,4 @@
-FROM node:20.15.0-alpine AS base
+FROM node:24.11.0-alpine AS base
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
 RUN adduser -S user
@@ -7,14 +7,14 @@ COPY package*.json ./
 
 # DEVELOPMENT APP PROFILE
 FROM base AS development
-RUN npm install && npm cache clean --force
+RUN npm ci && npm cache clean --force
 COPY . ./
 EXPOSE 8080
 CMD ["npm", "run", "dev"]
 
 # BUILD TARGET
 FROM base AS build
-RUN npm install && npm cache clean --force
+RUN npm ci && npm cache clean --force
 COPY . ./
 RUN npm run build
 USER user
