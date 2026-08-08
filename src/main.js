@@ -12,5 +12,5 @@ function drawCanvas () {
 
   ctx.moveTo(0, maxWidth)
   ctx.lineTo(maxWidth, 0)
-  ctx.stroke()  
+  ctx.stroke()
 }
