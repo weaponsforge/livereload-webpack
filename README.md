@@ -36,10 +36,10 @@ The following dependecies are used for this project. Feel free to experiment usi
 	- node version 24.11.0
 	- npm version 11.6.1
 3. NodeJS webpack modules (installed via npm)
-	- webpack 5.95.0
-	- webpack-dev-server 5.1.0
+	- webpack 5.109.2
+	- webpack-dev-server 5.2.6
 	- webpack-cli 5.1.4
-	- css-loader 7.1.2
+	- css-loader 7.1.4
 	- style-loader 4.0.0
 
 
@@ -250,4 +250,4 @@ Add the following GitHub Secrets and Variables to enable deployment to Docker Hu
 
 @weaponsforge<br>
 20200702<br>
-20241005
+20260808
