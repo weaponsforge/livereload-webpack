@@ -1,12 +1,12 @@
 {
   "name": "livereload-webpack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Localhost static website development environment for plain html, css and javascript files with live reload.  Uses webpack + webpack-dev-server",
   "main": "server.js",
   "private": true,
   "engines": {
-    "node": "20.15.0",
-    "npm": "10.7.0"
+    "node": "24.11.0",
+    "npm": "11.6.1"
   },
   "scripts": {
     "start": "node server.js",
@@ -16,14 +16,14 @@
   "author": "weaponsforge",
   "license": "ISC",
   "devDependencies": {
-    "css-loader": "^7.1.2",
-    "html-webpack-plugin": "^5.6.0",
+    "css-loader": "^7.1.4",
+    "html-webpack-plugin": "^5.6.8",
     "style-loader": "^4.0.0",
-    "webpack": "^5.95.0",
+    "webpack": "^5.109.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0"
+    "webpack-dev-server": "^5.2.6"
   },
   "dependencies": {
-    "express": "^4.21.0"
+    "express": "^5.2.1"
   }
 }
