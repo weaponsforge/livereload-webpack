@@ -121,10 +121,10 @@ https://hub.docker.com/r/weaponsforge/livereload-webpack
 
       ```
       # On Linux OS
-      docker run -it --rm -p 8080:8080 -v $(pwd)/src:/opt/app/src weaponsforge/livereload-webpack:latest
+      docker run --rm -p 8080:8080 -v $(pwd)/src:/opt/app/src weaponsforge/livereload-webpack:latest
 
       # On Windows OS
-      docker run -it --rm -p 8080:8080 -v %cd%\src:/opt/app/src -e WATCHPACK_POLLING=true weaponsforge/livereload-webpack:latest
+      docker run --rm -p 8080:8080 -v %cd%\src:/opt/app/src -e WATCHPACK_POLLING=true weaponsforge/livereload-webpack:latest
       ```
 
    - Using Docker compose (2nd option):<br>
