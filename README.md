@@ -33,8 +33,8 @@ The following dependecies are used for this project. Feel free to experiment usi
 
 1. Windows 64-bit OS
 2. NodeJS
-	- node version 20.15.0
-	- npm version 10.7.0
+	- node version 24.11.0
+	- npm version 11.6.1
 3. NodeJS webpack modules (installed via npm)
 	- webpack 5.95.0
 	- webpack-dev-server 5.1.0
@@ -102,7 +102,7 @@ https://hub.docker.com/r/weaponsforge/livereload-webpack
    - Open a terminal and run:<br>
 	    `docker pull weaponsforge/livereload-webpack:latest`
    - Navigate to the livereload-webpack root project directory, then run:<br>
-	    `docker compose -f docker-compose.dev.yml pull`
+	    `docker compose pull`
 
 2. Run the development image.<br>
    - Using only Docker (1st option):
@@ -128,8 +128,8 @@ https://hub.docker.com/r/weaponsforge/livereload-webpack
       ```
 
    - Using Docker compose (2nd option):<br>
-      - `docker compose -f docker-compose.dev.yml up`
-      - > **INFO:** Uncomment the following lines in the `docker-compose.dev.yml` file when working in a Windows host.
+      - `docker compose up`
+      - > **INFO:** Uncomment the following lines in the `docker-compose.yml` file when working in a Windows host.
          ```
          # Enable WATCHPACK_POLLING if working in Windows WSL2 to enable hot reload
          environment:
@@ -142,17 +142,17 @@ https://hub.docker.com/r/weaponsforge/livereload-webpack
 ### Local-Built Development Image
 
 1. Build the Docker image for local development.<br>
-   - `docker compose -f docker-compose.dev.yml build`
+   - `docker compose build`
 	    > **INFO:** Do this step only once or after installing new packages in the package.json file.
    - Refer to the [Development Image](#development-image) section for more information.
 
 2. Run the development image.<br>
-`docker compose -f docker-compose.dev.yml up`
+`docker compose up`
 
 3. Refer to the [Usage](#usage) section **steps # 2 - # 4** for local development.
 
 4. Stop and exit the development container.<br>
-`docker compose -f docker-compose.dev.yml down`
+`docker compose down`
 
 ## Building Docker Images
 
@@ -160,7 +160,7 @@ https://hub.docker.com/r/weaponsforge/livereload-webpack
 
 The **development** Docker image contains Node runtime, Webpack dependencies, and the latest repository source codes for local development. Build it with:
 
-`docker compose -f docker-compose.dev.yml build`
+`docker compose build`
 
 ### Production Image
 
