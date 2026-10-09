@@ -1,23 +1,23 @@
 FROM node:24.11.0-alpine AS base
-RUN mkdir -p /opt/app
 WORKDIR /opt/app
-RUN adduser -S user
-RUN chown -R user /opt/app
-COPY package*.json ./
+
+# Use the node image's default user
+RUN chown node:node /opt/app
+USER node
+COPY --chown=node:node package*.json ./
 
 # DEVELOPMENT APP PROFILE
 FROM base AS development
 RUN npm ci && npm cache clean --force
-COPY . ./
+COPY --chown=node:node . ./
 EXPOSE 8080
 CMD ["npm", "run", "dev"]
 
 # BUILD TARGET
 FROM base AS build
 RUN npm ci && npm cache clean --force
-COPY . ./
+COPY --chown=node:node . ./
 RUN npm run build
-USER user
 
 # PRODUCTION CLIENT PROFILE
 FROM nginx:1.22.0-alpine AS production

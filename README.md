@@ -36,11 +36,9 @@ The following dependecies are used for this project. Feel free to experiment usi
 	- node version 24.11.0
 	- npm version 11.6.1
 3. NodeJS webpack modules (installed via npm)
-	- webpack 5.109.2
-	- webpack-dev-server 5.2.6
-	- webpack-cli 5.1.4
-	- css-loader 7.1.4
-	- style-loader 4.0.0
+	- webpack 5.111.1
+	- webpack-dev-server 6.0.0
+	- webpack-cli 7.2.3
 
 
 ## Installation
@@ -84,11 +82,19 @@ Starts a simple ExpressJS web server serving the static website app from is stat
 
 ### `npm run dev`
 
-Runs the webpack-dev-server, launching the app for development mode.
+Runs the `webpack-dev-server` via `webpack`, launching the app for development mode. Files are served in-memory.
 
 ### `npm run build`
 
-Builds the static website output using webpack into the **"/dist"** directory.
+Builds the minified static website for production output using webpack into the **"/dist"** directory with CSS and JavaScript source maps (`.map`).
+
+### `npm run build:dev`
+
+Builds the unminified static website for development output using webpack into the **"/dist"** directory, with source maps inlined in the JavaScript bundle (`eval-source-map`) instead of separate `.map` files.
+
+### `npm run watch`
+
+Builds the development (unminified) static website into the **"/dist"** directory, then watches for file changes and rebuilds automatically. Unlike `npm run dev`, it writes files to disk and does not start a server or live reload. Run it alongside `npm start` to preview the latest build.
 
 ## Usage with Docker
 
