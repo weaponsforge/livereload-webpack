@@ -82,11 +82,19 @@ Starts a simple ExpressJS web server serving the static website app from is stat
 
 ### `npm run dev`
 
-Runs the webpack-dev-server, launching the app for development mode.
+Runs the `webpack-dev-server` via `webpack`, launching the app for development mode. Files are served in-memory.
 
 ### `npm run build`
 
-Builds the static website output using webpack into the **"/dist"** directory.
+Builds the minified static website for production output using webpack into the **"/dist"** directory with CSS and JavaScript source maps (`.map`).
+
+### `npm run build:dev`
+
+Builds the unminified static website for development output using webpack into the **"/dist"** directory, with source maps inlined in the JavaScript bundle (`eval-source-map`) instead of separate `.map` files.
+
+### `npm run watch`
+
+Builds the development (unminified) static website into the **"/dist"** directory, then watches for file changes and rebuilds automatically. Unlike `npm run dev`, it writes files to disk and does not start a server or live reload. Run it alongside `npm start` to preview the latest build.
 
 ## Usage with Docker
 
