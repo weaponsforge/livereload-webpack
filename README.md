@@ -36,11 +36,9 @@ The following dependecies are used for this project. Feel free to experiment usi
 	- node version 24.11.0
 	- npm version 11.6.1
 3. NodeJS webpack modules (installed via npm)
-	- webpack 5.109.2
-	- webpack-dev-server 5.2.6
-	- webpack-cli 5.1.4
-	- css-loader 7.1.4
-	- style-loader 4.0.0
+	- webpack 5.111.1
+	- webpack-dev-server 6.0.0
+	- webpack-cli 7.2.3
 
 
 ## Installation
