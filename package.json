@@ -1,7 +1,7 @@
 {
   "name": "livereload-webpack",
   "version": "3.0.0",
-  "description": "Localhost static website development environment for plain html, css and javascript files with live reload.  Uses webpack + webpack-dev-server",
+  "description": "Localhost static website development environment for plain HTML, CSS and JavaScript files with live reload. Uses webpack + webpack-dev-server",
   "main": "server.js",
   "private": true,
   "engines": {
@@ -10,10 +10,10 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "webpack serve --open --mode development",
+    "dev": "webpack serve --open --mode development --config-node-env=development",
     "build": "webpack --mode=production --config-node-env=production",
-    "build:dev": "webpack --mode=development",
-    "watch": "webpack --watch"
+    "build:dev": "webpack --mode=development --config-node-env=development",
+    "watch": "webpack --watch --mode=development --config-node-env=development"
   },
   "author": "weaponsforge",
   "license": "MIT",
